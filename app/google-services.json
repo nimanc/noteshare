@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "61955130066",
+    "firebase_url": "https://noteshare-ab187.firebaseio.com",
+    "project_id": "noteshare-ab187",
+    "storage_bucket": "noteshare-ab187.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61955130066:android:a5c719c54aa9db4c29630b",
+        "android_client_info": {
+          "package_name": "com.example.noteshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61955130066-3cd05euaa7uqt5sg3urnhh2rorgh2tvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyNFHLHeJDs12Y1ufVUN_KUHOQoMac0Lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61955130066-3cd05euaa7uqt5sg3urnhh2rorgh2tvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
