@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         editTextMobile = findViewById(R.id.editTextMobile);
+        String mobile = editTextMobile.getText().toString().trim();
 
         findViewById(R.id.buttonContinue).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,11 +33,18 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
-                intent.putExtra("mobile", mobile);
+                Intent intent = new Intent(MainActivity.this, CollegeSchoolActivity.class);
+                //intent.putExtra("mobile", mobile);
                 startActivity(intent);
             }
         });
+
+                Intent col_intent= new Intent(MainActivity.this, CollegeSignUpActivity.class);
+                Intent scool_intent= new Intent(MainActivity.this, SchoolSignUpActivity.class);
+
+                col_intent.putExtra("mobile", mobile);
+                scool_intent.putExtra("mobile", mobile);
+
     }
 }
 

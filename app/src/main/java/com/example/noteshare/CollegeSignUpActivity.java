@@ -37,18 +37,20 @@ public class CollegeSignUpActivity extends AppCompatActivity {
 
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("college_users");
+                Intent intent = getIntent();
 
                 String college = collegeObj.getText().toString();
                 String university = universityObj.getText().toString();
                 String session = sessionObj.getText().toString();
                 String locationC = locationObj.getText().toString();
+                String mobile = intent.getStringExtra("mobile");
 
                 collegeHelper college_helper=new collegeHelper(college, university, session, locationC);
-                reference.setValue(college_helper);
+                reference.child(mobile).setValue(college_helper);
 
 
-                Intent intent = new Intent(CollegeSignUpActivity.this, ProfileActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(CollegeSignUpActivity.this, ProfileActivity.class);
+                startActivity(intent1);
             }
         });
 
