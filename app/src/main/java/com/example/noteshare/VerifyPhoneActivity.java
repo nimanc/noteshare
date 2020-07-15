@@ -133,10 +133,9 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                             startActivity(intent);
 
                         } else {
-
                             //verification unsuccessful.. display an error message
 
-                            String message = "Somthing is wrong, we will fix it soon!";
+                            String message = "Something is wrong, we will fix it soon!";
 
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 message = "Invalid code entered...";

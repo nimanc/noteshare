@@ -3,23 +3,23 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:id="@+id/collegeRegister"
+        android:id="@+id/registerId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="College Registration"
+        android:text="School Registration"
         android:textSize="25dp"
         android:textStyle="bold"
         android:layout_gravity="center"/>
     <TextView
-        android:id="@+id/collegeTxt"
+        android:id="@+id/schoolTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="20dp"
-        android:text="College Name"/>
+        android:text="School Name"/>
     <EditText
-        android:id="@+id/txtNam"
+        android:id="@+id/schoolId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
@@ -28,23 +28,23 @@
         android:id="@+id/boardTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="University"
+        android:text="Board"
         android:layout_marginLeft="100dp" />
     <EditText
-        android:id="@+id/txtEmail"
+        android:id="@+id/boardId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:ems="10" />
 
     <TextView
-        android:id="@+id/sessionTxt"
+        android:id="@+id/gradeTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Academic Session"
+        android:text="Standard/Grade"
         android:layout_marginLeft="100dp" />
     <EditText
-        android:id="@+id/session"
+        android:id="@+id/gradeId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
@@ -52,7 +52,7 @@
         android:ems="10" />
 
     <TextView
-        android:id="@+id/location"
+        android:id="@+id/locationTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Location"
@@ -66,7 +66,7 @@
         android:ems="10" />
 
     <Button
-        android:id="@+id/collegeButton"
+        android:id="@+id/schoolButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
