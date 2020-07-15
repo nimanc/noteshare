@@ -28,7 +28,6 @@ public class SchoolSignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_school_sign_up);
 
 
-
         schoolObj = findViewById(R.id.schoolId);
         boardObj = findViewById(R.id.boardId);
         gradeObj = findViewById(R.id.gradeId);
@@ -40,7 +39,15 @@ public class SchoolSignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("users");
+                reference = rootNode.getReference("school_users");
+
+                String school = schoolObj.getText().toString();
+                String board = boardObj.getText().toString();
+                String grade = gradeObj.getText().toString();
+                String locationS = locationObj.getText().toString();
+
+                schoolHelper school_helper=new schoolHelper(school, board, grade, locationS);
+                reference.setValue(school_helper);
 
                 Intent intent = new Intent(SchoolSignUpActivity.this, ProfileActivity.class);
                 startActivity(intent);
