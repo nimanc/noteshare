@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SchoolSignUpActivity extends AppCompatActivity {
 
-    EditText schoolObj, boardObj, gradeObj, locationObj;
+    EditText schoolObj, boardObj, gradeObj, phoneObj, locationObj;
     Button schoolBtn;
 
     FirebaseDatabase rootNode;
@@ -28,10 +28,14 @@ public class SchoolSignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_school_sign_up);
 
 
+        //Intent intent = getIntent();
+        //final String mobile = intent.getStringExtra("mobile");
+
         schoolObj = findViewById(R.id.schoolId);
         boardObj = findViewById(R.id.boardId);
         gradeObj = findViewById(R.id.gradeId);
         locationObj = findViewById(R.id.locationId);
+        phoneObj = findViewById(R.id.phoneId);
         schoolBtn = findViewById(R.id.schoolButton);
 
         schoolBtn.setOnClickListener(new View.OnClickListener() {
@@ -44,13 +48,15 @@ public class SchoolSignUpActivity extends AppCompatActivity {
                 String school = schoolObj.getText().toString();
                 String board = boardObj.getText().toString();
                 String grade = gradeObj.getText().toString();
+                String phone = phoneObj.getText().toString();
                 String locationS = locationObj.getText().toString();
 
-                schoolHelper school_helper=new schoolHelper(school, board, grade, locationS);
-                reference.setValue(school_helper);
+                Intent profile_intent = new Intent(SchoolSignUpActivity.this, ProfileActivity.class);
+                startActivity(profile_intent);
 
-                Intent intent = new Intent(SchoolSignUpActivity.this, ProfileActivity.class);
-                startActivity(intent);
+                schoolHelper school_helper=new schoolHelper(school, board, grade, phone, locationS);
+                reference.child(phone).setValue(school_helper);
+
             }
         });
 

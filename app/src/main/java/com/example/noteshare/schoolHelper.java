@@ -1,17 +1,17 @@
 package com.example.noteshare;
 
+
 public class schoolHelper {
-    String school, board, grade, location;
-
-
+    String school, board, grade, phone, locationS;
     public schoolHelper() {
     }
 
-    public schoolHelper(String school, String board, String grade, String location) {
+    public schoolHelper(String school, String board, String grade, String phone, String locationS) {
         this.school = school;
         this.board = board;
         this.grade = grade;
-        this.location = location;
+        this.locationS = locationS;
+        this.phone = phone;
     }
 
     public String getSchool() {
@@ -38,11 +38,19 @@ public class schoolHelper {
         this.grade = grade;
     }
 
-    public String getLocation() {
-        return location;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getLocationS() {
+        return locationS;
+    }
+
+    public void setLocationS(String locationS) {
+        this.locationS = locationS;
     }
 }

@@ -17,8 +17,8 @@ public class CollegeSchoolActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(CollegeSchoolActivity.this, CollegeSignUpActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(CollegeSchoolActivity.this, CollegeSignUpActivity.class);
+                startActivity(intent1);
 
             }
         });

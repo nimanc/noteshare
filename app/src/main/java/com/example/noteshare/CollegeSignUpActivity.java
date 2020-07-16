@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CollegeSignUpActivity extends AppCompatActivity {
 
 
-    EditText collegeObj, universityObj, sessionObj, locationObj;
+    EditText collegeObj, universityObj, sessionObj, phoneObj, locationObj;
     Button collegeBtn;
 
     FirebaseDatabase rootNode;
@@ -28,8 +28,11 @@ public class CollegeSignUpActivity extends AppCompatActivity {
         collegeObj = findViewById(R.id.collegeID);
         universityObj = findViewById(R.id.universityID);
         sessionObj = findViewById(R.id.sessionID);
+        phoneObj = findViewById(R.id.phoneID);
         locationObj = findViewById(R.id.locationID);
         collegeBtn = findViewById(R.id.collegeButton);
+
+
 
         collegeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,18 +40,21 @@ public class CollegeSignUpActivity extends AppCompatActivity {
 
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("college_users");
+                Intent intent = getIntent();
+
 
                 String college = collegeObj.getText().toString();
                 String university = universityObj.getText().toString();
                 String session = sessionObj.getText().toString();
+                String phone = phoneObj.getText().toString();
                 String locationC = locationObj.getText().toString();
+                String mobile = intent.getStringExtra("mobile");
 
-                collegeHelper college_helper=new collegeHelper(college, university, session, locationC);
-                reference.setValue(college_helper);
+                collegeHelper college_helper=new collegeHelper(college, university, session, phone, locationC);
+                reference.child(phone).setValue(college_helper);
 
-
-                Intent intent = new Intent(CollegeSignUpActivity.this, ProfileActivity.class);
-                startActivity(intent);
+                Intent college_intent = new Intent(CollegeSignUpActivity.this, ProfileActivity.class);
+                startActivity(college_intent);
             }
         });
 

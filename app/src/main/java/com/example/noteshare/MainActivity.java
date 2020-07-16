@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         editTextMobile = findViewById(R.id.editTextMobile);
 
+        String mobile = editTextMobile.getText().toString().trim();
+
         findViewById(R.id.buttonContinue).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,11 +34,15 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
+
+                Intent intent = new Intent(MainActivity.this, CollegeSchoolActivity.class);
                 intent.putExtra("mobile", mobile);
                 startActivity(intent);
+
             }
         });
+
+
     }
 }
 
