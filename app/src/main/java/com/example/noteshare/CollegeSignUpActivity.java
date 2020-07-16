@@ -33,7 +33,6 @@ public class CollegeSignUpActivity extends AppCompatActivity {
         collegeBtn = findViewById(R.id.collegeButton);
 
 
-
         collegeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +56,5 @@ public class CollegeSignUpActivity extends AppCompatActivity {
                 startActivity(college_intent);
             }
         });
-
     }
 }

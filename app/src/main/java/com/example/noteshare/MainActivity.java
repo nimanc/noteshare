@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                Intent intent = new Intent(MainActivity.this, CollegeSchoolActivity.class);
+                Intent intent = new Intent(MainActivity.this, VerifyPhoneActivity.class);
                 intent.putExtra("mobile", mobile);
                 startActivity(intent);
 

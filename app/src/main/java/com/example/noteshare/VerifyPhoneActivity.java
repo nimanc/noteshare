@@ -18,6 +18,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
@@ -130,7 +135,12 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                             //verification successful we will start the profile activity
                             Intent intent = new Intent(VerifyPhoneActivity.this, CollegeSchoolActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
+                            //startActivity(intent);
+                            Intent intent1 = getIntent();
+                            String mobile = intent1.getStringExtra("mobile");
+
+                            check(mobile);
+
 
                         } else {
                             //verification unsuccessful.. display an error message
@@ -153,5 +163,27 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    private void check(String mobile) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("college_users");
+
+        ref.orderByChild("phone").equalTo(mobile).addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    Intent intent=new Intent(VerifyPhoneActivity.this, ProfileActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent=new Intent(VerifyPhoneActivity.this, CollegeSchoolActivity.class);
+                    startActivity(intent);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        }
 
 }
